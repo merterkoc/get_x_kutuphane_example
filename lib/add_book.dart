@@ -3,17 +3,23 @@ import 'package:get/get.dart';
 import 'package:kutuphane/controllers/controller.dart';
 
 class AddBookWidget extends StatefulWidget {
-  AddBookWidget({Key? key}) : super(key: key);
+  final bool themeValue;
+  AddBookWidget({Key? key, required this.themeValue}) : super(key: key);
 
   @override
-  State<AddBookWidget> createState() => _AddBookWidgetState();
+  State<AddBookWidget> createState() => _AddBookWidgetState(theme: themeValue);
 }
 
 class _AddBookWidgetState extends State<AddBookWidget> {
+  bool theme;
+
+  _AddBookWidgetState({required this.theme});
   Controller _controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: theme ? ThemeData.light() : ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Add Book'),

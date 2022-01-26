@@ -4,12 +4,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 class ListTileKitap extends StatelessWidget {
   String bookName;
   String bookAuthor;
-  String? bookImage;
+  String bookImage;
 
   ListTileKitap({
     Key? key,
     required this.bookAuthor,
-    this.bookImage,
+    required this.bookImage,
     required this.bookName,
   }) : super(key: key);
 
@@ -23,7 +23,7 @@ class ListTileKitap extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CachedNetworkImage(
-              imageUrl: bookImage!,
+              imageUrl: bookImage,
               height: 180,
               placeholder: (context, url) => CircularProgressIndicator(),
               errorWidget: (context, url, error) => Icon(Icons.error),

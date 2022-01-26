@@ -43,8 +43,8 @@ class Controller extends GetxController {
     //update();
   }
 
-  changeString() {
-    print(name);
-    name.value = 'Agmet';
+  removeBook(int index) {
+    books.removeAt(index);
+    update();
   }
 }
